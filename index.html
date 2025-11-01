@@ -10,7 +10,15 @@
 </head>
 <body>
   <main class="app">
-    <section class="grid-container" aria-label="Visualizer for the current day"></section>
+    <div class="content-wrapper">
+      <section class="grid-container" aria-label="Visualizer for the current day"></section>
+      <div class="page-stats-container">
+        <h2 class="stats-title">页面访问统计</h2>
+        <div class="stats-list" id="statsList">
+          <div class="stats-item placeholder">暂无数据</div>
+        </div>
+      </div>
+    </div>
     <div class="legend" role="presentation">
       <span class="grid-item sample bg-time-passed" aria-hidden="true"></span>
       <span>today passed</span>

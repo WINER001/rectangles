@@ -36,8 +36,16 @@ h1 {
 
 .app {
   padding: 2rem;
-  max-width: 72rem;
+  max-width: 120rem;
   text-align: center;
+}
+
+.content-wrapper {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  justify-content: center;
+  margin-bottom: 1rem;
 }
 
 .grid-container {
@@ -49,6 +57,68 @@ h1 {
   width: 100%;
   max-width: 690px;
   margin: 1rem;
+}
+
+.page-stats-container {
+  background-color: white;
+  border: .25rem solid var(--gray);
+  border-radius: 0.4rem;
+  padding: 1.5rem;
+  min-width: 300px;
+  max-width: 400px;
+  max-height: 600px;
+  overflow-y: auto;
+  text-align: left;
+}
+
+.stats-title {
+  font-size: 2rem;
+  margin: 0 0 1.5rem 0;
+  text-align: center;
+  color: var(--black);
+}
+
+.stats-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.stats-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem;
+  background-color: var(--beige);
+  border-radius: 0.4rem;
+  border: 1px solid var(--gray);
+  transition: background-color 0.3s ease;
+}
+
+.stats-item:hover {
+  background-color: var(--green);
+}
+
+.stats-item .page-url {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-right: 1rem;
+  font-size: 1.4rem;
+}
+
+.stats-item .page-count {
+  font-weight: bold;
+  color: var(--black);
+  font-size: 1.6rem;
+  white-space: nowrap;
+}
+
+.stats-item.placeholder {
+  justify-content: center;
+  color: var(--gray);
+  font-style: italic;
 }
 
 .grid-item {
