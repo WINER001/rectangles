@@ -1,0 +1,42 @@
+{
+  "expo": {
+    "name": "时间酒楼",
+    "slug": "time-inn",
+    "scheme": "timeinn",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#F4F0E6"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.timeinn.app"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#F4F0E6"
+      }
+    },
+    "web": {
+      "bundler": "metro",
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "react-native-skia",
+        {
+          "ios": {
+            "useMetal": true
+          }
+        }
+      ]
+    ],
+    "newArchEnabled": true
+  }
+}
