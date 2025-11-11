@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, TouchableOpacity, Text, ViewStyle } from "react-native";
+import { StyleSheet, TouchableOpacity, Text, StyleProp, ViewStyle } from "react-native";
 
 import { palette } from "@theme/colors";
 import { theme } from "@theme/index";
@@ -8,20 +8,23 @@ interface HandDrawnButtonProps {
   label: string;
   onPress: () => void;
   variant?: "primary" | "secondary";
-  style?: ViewStyle;
+  style?: StyleProp<ViewStyle>;
+  disabled?: boolean;
 }
 
 export const HandDrawnButton: React.FC<HandDrawnButtonProps> = ({
   label,
   onPress,
   variant = "primary",
-  style
+  style,
+  disabled = false
 }) => {
   return (
     <TouchableOpacity
       activeOpacity={0.85}
       onPress={onPress}
-      style={[styles.base, styles[variant], style]}
+      disabled={disabled}
+      style={[styles.base, styles[variant], disabled && styles.disabled, style]}
     >
       <Text style={styles.label}>{label}</Text>
     </TouchableOpacity>
@@ -48,6 +51,9 @@ const styles = StyleSheet.create({
   secondary: {
     backgroundColor: palette.canvas,
     borderColor: palette.border
+  },
+  disabled: {
+    opacity: 0.6
   },
   label: {
     color: palette.ink,

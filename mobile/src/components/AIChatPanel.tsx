@@ -21,7 +21,7 @@ export const AIChatPanel: React.FC<AIChatPanelProps> = ({ placeholder, onSend })
   const [messages, setMessages] = useState<AIMessage[]>([]);
 
   const send = async () => {
-    if (!input.trim()) {
+    if (loading || !input.trim()) {
       return;
     }
     const userMessage: AIMessage = { id: `user-${Date.now()}`, role: "user", content: input.trim() };
@@ -62,12 +62,7 @@ export const AIChatPanel: React.FC<AIChatPanelProps> = ({ placeholder, onSend })
           style={styles.input}
           multiline
         />
-        <HandDrawnButton
-          label={loading ? "生成中..." : "请教AI"}
-          onPress={send}
-          variant="secondary"
-          style={{ opacity: loading ? 0.6 : 1 }}
-        />
+        <HandDrawnButton label={loading ? "生成中..." : "请教AI"} onPress={send} variant="secondary" disabled={loading} />
       </View>
     </View>
   );

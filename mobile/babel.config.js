@@ -3,7 +3,6 @@ module.exports = function babelConfig(api) {
   return {
     presets: ["babel-preset-expo"],
     plugins: [
-      "react-native-reanimated/plugin",
       [
         "module-resolver",
         {
@@ -17,7 +16,8 @@ module.exports = function babelConfig(api) {
             "@types": "./src/types"
           }
         }
-      ]
+      ],
+      "react-native-reanimated/plugin"
     ]
   };
 };
